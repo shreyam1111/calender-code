@@ -1,0 +1,97 @@
+print("Please enter a date")
+day = int(input("Day: "))
+month = int(input("Month: "))
+Year = int(input("Year: "))
+
+
+menu = input("Menu: \n 1) Calculate the number of days in the given month. \n 2) Calculate the number of days passed in the given year \n ")
+
+#def functions
+
+def leap_year(y):
+    if y%4 == 0 and y%100 != 0:
+        return 1
+    elif y%400 == 0:
+        return 1
+    else:
+        return 0
+
+
+
+def number_of_days(m, y):
+    if m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
+        print(31)
+    elif m==4 or m==6 or m==9 or m==11:
+        print(30)
+    if leap_year(Year) == 0:
+        if m==2:
+            print(28)
+    if leap_year(Year) == 1:    
+        if m==2:
+            print(29)
+ def days_passed(d, m, y):
+    if leap_year(Year) == 0:
+        if m==1:
+            print(d-1)
+        elif m==2:
+            print(30+d)
+        elif m==3:
+            print(58+d)
+        elif m==4:
+            print(90-1+d)
+        elif m==5:
+            print(120-1+d)
+        elif m==6:
+            print(151-1+d)
+        elif m==7:
+            print(181-1+d)
+        elif m==8:
+            print(212-1+d)
+        elif m==9:
+            print(243-1+d)
+        elif m==10:
+            print(273-1+d)
+        elif m==11:
+            print(304-1+d)
+        elif m==12:
+            print(334-1+d)
+            
+    if leap_year(Year) == 1:
+        if m==1:
+            print(d)
+        elif m==2:
+            print(31+d)
+        elif m==3:
+            print(59+d)
+        elif m==4:
+            print(90+d)
+        elif m==5:
+            print(120+d)
+        elif m==6:
+            print(151+d)
+        elif m==7:
+            print(181+d)
+        elif m==8:
+            print(212+d)
+        elif m==9:
+            print(243+d)
+        elif m==10:
+            print(273+d)
+        elif m==11:
+            print(304+d)
+        elif m==12:
+            print(334+d)
+    
+           
+        
+
+
+    
+        
+#performance   
+
+if menu == "1":
+   number_of_days(month,Year)
+    
+if menu == "2":
+    days_passed(day, month, Year)
